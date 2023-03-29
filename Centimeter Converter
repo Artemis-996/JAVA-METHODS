@@ -1,0 +1,39 @@
+import java.util.Scanner;
+class CentimeterConverter 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Length In CM : ");
+		double cm = s.nextDouble();
+		cmToMeter(cm);
+		cmToKilometer(cm);
+	}
+
+
+	public static void cmToMeter(double cm)
+	{
+		double meter = cm * 0.01;
+		System.out.println("Meter : "+meter);
+		meterToInch(meter);
+	}
+
+	public static void meterToInch(double meter)
+	{
+		double inch = meter*39.3701;
+		System.out.println("Inch :"+inch);
+		inchToMillimeter(inch);
+	}
+
+	public static void inchToMillimeter(double inch)
+	{
+		double mill = inch*25.4;
+		System.out.println("Millimeter : "+mill);
+	}
+
+	public static void cmToKilometer(double cm )
+	{
+		double km = 10000/cm;
+		System.out.println("Kilometer : "+km);
+	}
+}
