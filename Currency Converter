@@ -1,0 +1,41 @@
+import java.util.Scanner; 
+class  CurrencyConverter
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter INR : ");
+		double inr = s.nextDouble();
+
+		inrToDollar(inr);
+
+	}
+
+	public static void inrToDollar(double inr)
+	{
+		double dollar = 0.012*inr;
+		System.out.println("Dollar :"+dollar);
+		dollarToEuro(dollar);
+	}
+
+	public static void dollarToEuro(double dollar)
+	{
+		double euro = dollar*0.92; 
+		System.out.println("Euro :"+euro);
+		euroToDirham(euro);
+
+	}
+
+	public static void euroToDirham(double euro)
+	{
+		double dirham = euro*3.98;
+		System.out.println("Dirham :"+dirham);
+		dirhamToPound(dirham);
+	}
+
+	public static void dirhamToPound(double dirham)
+	{
+		double pound = dirham*0.22;
+		System.out.println("Pound :"+pound);
+	}
+}
