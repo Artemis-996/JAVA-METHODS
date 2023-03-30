@@ -1,0 +1,92 @@
+import java.util.Scanner;
+class MethodWithReturnType
+{
+	public static void main(String[] args) 
+	{
+		Scanner  s = new Scanner(System.in);
+		System.out.println("Enter Number 1 : ");
+		int ip = s.nextInt();
+		if (prime(ip)==true)
+		{
+			System.out.println("Prime");
+		}
+		else if (prime(ip)==false)
+		{
+			System.out.println("Not Prime");
+		}
+		
+	}
+
+	public static boolean prime(int num)
+	{
+		int temp = num;
+		int start = 2;
+		boolean flag = true;
+		while (start<num)
+		{
+			if (num%start==0)
+			{
+				break;
+			}
+			start++;
+		}
+		if (num==start)
+		{
+			flag = true;
+		}
+		else
+		{
+			flag = false;
+		}
+		return flag;
+	}
+
+	public static int reverse(int num)
+	{
+		int rev = 0;
+
+		for (int i=num;i>0 ;i/=10 )
+		{
+			int rem = i%10;
+			System.out.println(rem);
+			rev = (rev*10)+rem;
+		}
+
+		return rev;
+	}
+
+	public static int count(int num)
+	{
+		int temp = num;
+		int count = 0;
+		while (temp>0)
+		{
+			temp/=10;
+			count++;
+		}
+		return count;
+	}
+
+	public static int power(int base,int raise)
+	{
+		int pow = 1;
+		for (int i=raise;i>0;i--)
+		{
+			pow = pow * base;
+		}
+		return pow;
+	}
+
+	public static int getLastDigit(int num)
+	{
+		int rem = num%10;
+		return rem;
+	}
+
+	public static int removeDigit(int num)
+	{
+		num/=10;
+		return num;
+	}
+
+}
