@@ -1,0 +1,43 @@
+import java.util.Scanner;
+class MethodWithReturnType
+{
+	public static void main(String[] args) 
+	{
+		Scanner  s = new Scanner(System.in);
+		System.out.println("Enter Number 1 : ");
+		int ip = s.nextInt();
+		if (prime(ip)==true)
+		{
+			System.out.println("Prime");
+		}
+		else if (prime(ip)==false)
+		{
+			System.out.println("Not Prime");
+		}
+		
+	}
+
+	public static boolean prime(int num)
+	{
+		int temp = num;
+		int start = 2;
+		boolean flag = true;
+		while (start<num)
+		{
+			if (num%start==0)
+			{
+				break;
+			}
+			start++;
+		}
+		if (num==start)
+		{
+			flag = true;
+		}
+		else
+		{
+			flag = false;
+		}
+		return flag;
+	}
+  }
