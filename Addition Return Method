@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class MethodReturnAdd 
+{
+	public static void main(String[] args) 
+	{
+		Scanner  s = new Scanner(System.in);
+		System.out.println("Enter Number 1 : ");
+		int ip1 = s.nextInt();
+		System.out.println("Enter Number 2 : ");
+		int ip2 = s.nextInt();
+
+		System.out.println(add(ip1,ip2));  // int a = add(ip1,ip2);
+	}
+
+	public static int add(int a,int b)
+	{
+		int c = a+b;
+		return c;
+	}
+}
