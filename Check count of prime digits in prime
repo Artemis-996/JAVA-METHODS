@@ -35,3 +35,51 @@ class countOfPrimeDigits        //will check if prime and return boolean ans
 		System.out.println(count);
 	}
 }
+
+
+// Another Code
+
+
+import java.util.Scanner;
+class countOfPrimeDigits        //will check if prime and return boolean ans
+{
+	public static boolean checkPrime(int num)
+	{
+		for (int i=2;i<num ;i++ )
+		{
+			if (num%i==0)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static int countOfPrime(int num) 
+	{
+		int count = 0;
+		while (num>0)
+		{
+			int rem = num%10;
+			boolean ans = checkPrime(rem);
+			if (ans)
+			{
+				count++;
+			}
+			num/=10;
+		}
+		return count;
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number : ");
+		int num = s.nextInt();
+
+		int ans = countOfPrime(num);
+		System.out.println(ans);
+	}
+
+}
+
