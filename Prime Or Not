@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class PrimeOrNot
+{
+	public static boolean checkPrime(int num)
+	{
+		if (num%10==0)
+		{
+			return false;
+		}
+		return true;
+	}
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner (System.in);
+		System.out.println("Enetr Number : ");
+		int ip = s.nextInt();
+		
+		boolean ans = checkPrime(ip);
+		if (ans)
+		{
+			System.out.println("Number is prime");
+		}
+		else
+		{
+			System.out.println("Number is not prime");
+		}
+	}
+}
