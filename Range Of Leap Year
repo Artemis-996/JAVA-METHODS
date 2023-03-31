@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class RangeOfLeapYear 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Starting year");
+		int start = s.nextInt();
+
+		System.out.println("Enter Ending Year");
+		int end = s.nextInt();
+		while (start<=end)
+		{
+			boolean ans = checkLeapYear(start);
+			if (ans)
+			{
+				System.out.println(start);
+			}
+			start++;
+		}
+	}
+
+	public static boolean checkLeapYear(int num)
+	{
+		if ((num%4==0 && num%100!=0) || num%400==0)
+		{
+			return true;
+		}
+		return false;
+	}
+}
