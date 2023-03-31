@@ -1,0 +1,50 @@
+import java.util.Scanner;
+class Range Of Prime Palindrome 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Starting year");
+		int start = s.nextInt();
+
+		System.out.println("Enter Starting year");
+		int end = s.nextInt();
+
+		while (start<=end)
+		{
+			int rev =  reverse(start);
+			boolean ans = primeOrNot(start);
+			if (start==rev && ans )
+			{
+				System.out.println(start);
+			}
+			start++;
+		}
+
+
+	}
+
+	public static int reverse(int num)    //method for reverse 
+	{
+		int rev = 0;
+		while (num>0)
+		{
+			int rem = num%10;
+			rev =  (rev*10)+rem;
+			num/=10;
+		}
+		return rev;
+	}
+
+	public static boolean primeOrNot(int num)  // method for prime
+	{
+		for (int i = 2;i<num ;i++ )
+		{
+			if (num%i==0)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+}
