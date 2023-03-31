@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class RangeOfPrime  
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Starting Number : ");
+		int start = s.nextInt();
+	
+		System.out.println("Enter Ending Number : ");
+		int end = s.nextInt();
+
+		while (start<=end)
+		{
+			boolean ans = primeOrNot(start);
+
+			if (ans)
+			{
+				System.out.println(start);
+			}
+
+			start++;
+		}
+
+
+	}
+
+	public static boolean primeOrNot(int num)   //Methos to check prime or not
+	{
+		for (int i = 2 ; i < num ; i++ )
+		{
+			if (num%i==0)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+}
