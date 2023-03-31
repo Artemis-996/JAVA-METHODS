@@ -4,10 +4,10 @@ class RangeOfPalindrome
 	public static void main(String[] args) 
 	{
 		Scanner s = new Scanner(System.in);
-		System.out.println("Enter Starting year");
+		System.out.println("Enter Starting Number");
 		int start = s.nextInt();
 
-		System.out.println("Enter Starting year");
+		System.out.println("Enter Starting Number");
 		int end = s.nextInt();
 
 		while (start<=end)
