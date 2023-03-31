@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class countOfPrimeDigits        //will check if prime and return boolean ans
+{
+	public static boolean checkPrime(int num)
+	{
+		for (int i=2;i<num ;i++ )
+		{
+			if (num%i==0)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number : ");
+		int ip = s.nextInt();
+		int count = 0;
+
+		while (ip>0)
+		{
+			int rem = ip%10;
+			boolean ans = checkPrime(rem);
+
+			if (ans)
+			{
+				count++;
+			}
+			ip/=10;
+		}
+
+		System.out.println(count);
+	}
+}
