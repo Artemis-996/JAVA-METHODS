@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class RangeOfPalindrome 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Starting year");
+		int start = s.nextInt();
+
+		System.out.println("Enter Starting year");
+		int end = s.nextInt();
+
+		while (start<=end)
+		{
+			int rev =  reverse(start);
+			if (start==rev)
+			{
+				System.out.println(start);
+			}
+			start++;
+		}
+
+
+	}
+
+	public static int reverse(int num)
+	{
+		int rev = 0;
+		while (num>0)
+		{
+			int rem = num%10;
+			rev =  (rev*10)+rem;
+			num/=10;
+		}
+		return rev;
+	}
+}
