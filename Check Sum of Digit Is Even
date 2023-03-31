@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class CheckSumIsEven 
+{
+	public static int sumOfDigit(int num)
+	{
+		int sum = 0;
+		while (num>0)
+		{
+			sum = sum + (num%10);
+			num/=10;
+		}
+		return sum;
+	}
+
+	public static boolean EvenOdd(int num)
+	{
+		if (num%2==0)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number :");
+		int ip = s.nextInt();
+
+		int sum = sumOfDigit(ip);
+		boolean ans = EvenOdd(sum);
+		if (ans)
+		{
+			System.out.println("Sum of digits is Even");
+		}
+		else
+		{
+			System.out.println("Sum of digits is Odd");
+		}
+	}
+}
