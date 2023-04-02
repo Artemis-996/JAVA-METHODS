@@ -1,0 +1,63 @@
+import java.util.Scanner;
+class RotatingPrimeNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number");
+		int ip = s.nextInt();
+		boolean ans = rotatingPrime(ip);
+		if (ans)
+		{
+			System.out.println("Number is Rotating Prime");	
+		}
+		else
+		{
+			System.out.println("Number is not Rotating Prime");
+		}
+	}
+
+	public static int count(int num)
+	{
+		int ct = 0;
+		while (num>0)
+		{
+			ct++;
+			num/=10;
+		}
+		return ct;
+	}
+
+	public static int power(int base,int raise)
+	{
+		int pow = 1;
+		for (int i=0;i<raise ;i++ )
+		{
+			pow *= base;
+		}
+		return pow;
+	}
+
+	public static boolean rotatingPrime(int num)
+	{
+		int count = count(num);
+		for (int i = 0; i < count ; i++ )
+		{
+			for (int j = 2;j<num ;j++ )
+			{
+				if (num%j==0)
+				{
+					return false;
+				}
+				
+			}
+			int position = power(10,count-1);
+			int last = num%10;
+			num/=10;
+			int ans = (last*position)+num;
+			System.out.println(ans + " is prime");
+			num = ans;
+		}
+		return true;
+	}
+}
