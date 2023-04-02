@@ -1,0 +1,71 @@
+import java.util.Scanner;
+class SeriesRotatingPrimeNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Starting Number");
+		int start = s.nextInt();
+
+
+		System.out.println("Enter ending Number");
+		int end = s.nextInt();
+
+
+		while (start<=end)
+		{
+			boolean ans = rotatingPrime(start);
+			if (ans)
+			{
+				System.out.println(start);
+			}
+			start++;
+		}
+		
+	}
+
+	public static int count(int num)
+	{
+		int ct = 0;
+		while (num>0)
+		{
+			ct++;
+			num/=10;
+		}
+		return ct;
+	}
+
+	public static int power(int base,int raise)
+	{
+		int pow = 1;
+		for (int i=0;i<raise ;i++ )
+		{
+			pow *= base;
+		}
+		return pow;
+	}
+
+	public static boolean rotatingPrime(int num)
+	{
+		int count = count(num);
+		for (int i = 0; i < count ; i++ )
+		{
+			for (int j = 2;j<num ;j++ )
+			{
+				if (num%j==0)
+				{
+					return false;
+				}
+
+				
+			}
+
+			int position = power(10,count-1);
+			int last = num%10;
+			num/=10;
+			int ans = (last*position)+num;
+			num = ans;
+		}
+		return true;
+	}
+}
