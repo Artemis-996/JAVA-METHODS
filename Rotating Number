@@ -26,7 +26,7 @@ class RotatingNumber
 	{
 		int ct =  count(num);
 		int position = power(10,ct-1);
-		int las = num%10;
+		int last = num%10;
 		int ans = last * position;
 		num/=10;
 		ans = ans + num;
