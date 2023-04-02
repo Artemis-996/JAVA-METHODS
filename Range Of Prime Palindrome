@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Range Of Prime Palindrome 
+class RangeOfPrimePalindrome 
 {
 	public static void main(String[] args) 
 	{
