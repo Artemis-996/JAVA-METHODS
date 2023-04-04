@@ -1,0 +1,47 @@
+/*          ex :- Input: n = 6
+				  Output: true
+				  Explanation: 6 = 2 × 3 */
+import java.util.Scanner; 
+class UglyNumber  
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner (System.in);
+		System.out.println("Enter Number :");
+		int ip = s.nextInt();
+		if (isUgly(ip))
+		{
+			System.out.println("Number is ugly number");
+		}
+		else
+		{
+			System.out.println("Number is not ugly number");
+		}
+	}
+
+	public static boolean isUgly(int num)
+	{
+		int temp = num;
+		while (temp>0)
+		{
+			if (temp%2==0)
+			{
+				temp = temp / 2;
+			}
+			else if (temp%3==0)
+			{
+				temp = temp/3;
+			}
+			else if (temp%5==0)
+			{
+				temp = temp/5;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		return temp==1? true:false;
+	}
+}
