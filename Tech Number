@@ -1,0 +1,71 @@
+import java.util.Scanner;
+class TechNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Any Number : ");
+		int start = s.nextInt();
+		if (isTechNumber(start))
+		{
+			System.out.println("Number is Tech Number");
+		}
+		else
+		{
+			System.out.println("Number is not a Tech Number");
+		}
+		
+	}
+
+	public static int count(int num)
+	{
+		int count = 0;
+		while (num>0)
+		{
+			count++;
+			num/=10;
+		}
+		return count;
+	}
+
+	public static int power(int base,int raise)
+	{
+		int pow = 1;
+		for (int i = 0 ; i<raise ; i++ )
+		{
+			pow = pow * base;
+		}
+		return pow;
+	}
+
+	public static boolean isTechNumber(int num)
+	{
+		int temp = num;
+		int temp2 = num;
+
+		int count = count(num);
+		if (count%2!=0)
+		{
+			System.out.println("Enter Number With Even Length");
+			return false;
+		}
+
+		int pos = power(10,count/2);			
+
+		int rhs = temp%pos;					//extract right part out
+
+		for (int i = 0;i<count/2 ;i++ )   //extract left part out
+		{
+			temp2/=10;
+		}
+		
+		int lhs = temp2;
+		int sum = rhs + lhs;
+
+		int sqr = sum*sum;
+
+		return sqr==num? true : false;
+		
+
+	}
+}
