@@ -1,0 +1,70 @@
+import java.util.Scanner;
+class SeriesTechNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Start Number : ");
+		int start = s.nextInt();
+
+		System.out.println("Enter Ending Number : ");
+		int end = s.nextInt();
+
+		while (start<=end)
+		{
+			if(isTechNumber(start))
+			{
+				System.out.println(start);
+			}
+			start++;
+		}
+		
+	}
+
+	public static int count(int num)
+	{
+		int count = 0;
+		while (num>0)
+		{
+			count++;
+			num/=10;
+		}
+		return count;
+	}
+
+	public static int power(int base,int raise)
+	{
+		int pow = 1;
+		for (int i = 0 ; i<raise ; i++ )
+		{
+			pow = pow * base;
+		}
+		return pow;
+	}
+
+	public static boolean isTechNumber(int num)
+	{
+		int temp = num;
+		int temp2 = num;
+
+		int count = count(num);
+
+		int pos = power(10,count/2);			
+
+		int rhs = temp%pos;					//extract right part out
+
+		for (int i = 0;i<count/2 ;i++ )   //extract left part out
+		{
+			temp2/=10;
+		}
+		
+		int lhs = temp2;
+		int sum = rhs + lhs;
+
+		int sqr = sum*sum;
+
+		return sqr==num? true : false;
+		
+
+	}
+}
