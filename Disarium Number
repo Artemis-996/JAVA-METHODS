@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class SeriesOfDisariumNumber
+class DisariumNumber
 {
 	public static int count(int num)
 	{
