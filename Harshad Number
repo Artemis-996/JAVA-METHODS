@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class HarshadNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number : ");
+		int ip = s.nextInt();
+
+		if (harshadNumber(ip))
+		{
+			System.out.println("It is a harshad number");
+		}
+		else
+		{
+			System.out.println("It is not  harshad number");
+		}
+	}
+
+	public static int sumOfDigit(int num)
+	{
+		int sum = 0;
+		while (num>0)
+		{
+			int rem = num%10;
+			sum = sum + rem;
+			num/=10;
+		}
+		return sum;
+	}
+
+	public static boolean harshadNumber(int num)
+	{
+		int sum = sumOfDigit(num);
+		return num%sum==0? true:false;
+	}
+}
