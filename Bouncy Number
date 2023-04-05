@@ -1,0 +1,52 @@
+import java.util.Scanner;   
+class BouncyOrNot
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number :");
+		int start = s.nextInt();
+		
+		
+		
+		if (isBouncy(start))
+		{
+			System.out.println("b");
+		}
+		else
+		{
+			System.out.println("nb");
+		}
+		
+	}
+
+	public static boolean isBouncy(int num)
+	{
+		boolean inc = false;
+		boolean dec = false;
+
+		while (num>0)
+		{
+			int rem1 = num%10;
+			num = num/10;
+			int rem2 = num%10;
+			if (num==0)
+			{
+				break;
+			}
+			{
+			}
+			if (rem1>rem2)
+			{
+				inc = true;
+			}
+			if (rem1<rem2)
+			{
+				dec = true;
+			}
+
+		}
+		return dec==inc?true:false;
+	}
+	
+}
