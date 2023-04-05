@@ -1,0 +1,40 @@
+import java.util.Scanner;     //
+class PerfectNumber
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number :");
+		int start = s.nextInt();
+
+		System.out.println("Enter Number :");
+		int end = s.nextInt();
+
+		while (start<=end)
+		{	if (isPerfect(start))
+			{
+				System.out.println(start);
+			}
+			start++;
+		}
+		
+		
+	
+	
+	}
+
+	public static boolean isPerfect(int num)
+	{
+		int den = 1;
+		int sum=0;
+		while (den<=num/2)
+		{
+			if (num%den==0)
+			{
+				sum = sum+den;
+			}
+			den++;
+		}
+		return num==sum?true:false;
+	}
+}
