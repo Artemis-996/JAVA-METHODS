@@ -1,0 +1,59 @@
+import java.util.Scanner;     
+class AutoMorphicSeries
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number");
+		int start = s.nextInt();
+		System.out.println("Enter Number");
+		int end = s.nextInt();
+		while(start<=end)
+		{
+			if (isAutomorphic(start))
+			{
+				System.out.println(start);
+			}
+			start++;
+		}
+
+
+		
+	}
+
+	public static int count(int num)
+	{
+		int ct = 0;
+		while (num>0)
+		{
+			ct++;
+			num/=10;
+		}
+		return ct;
+	}
+
+	public static int power(int base,int raise)
+	{
+		int pow = 1;
+		for (int i = 0; i<raise ; i++ )
+		{
+			pow = pow*base;
+		}
+		return pow;
+	}
+
+	public static boolean isAutomorphic(int num)
+	{
+		int sqr = num*num;
+		int count = count(num);
+		int pos = power(10,count);
+
+		int rem = sqr%pos;
+
+		return rem == num?true:false;
+		
+	}
+
+
+	
+}
