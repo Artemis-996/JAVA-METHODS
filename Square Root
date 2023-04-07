@@ -1,0 +1,58 @@
+import java.util.Scanner;        ex := find root of 7
+class SquareRoot 
+{
+	public static double Sqrt(double num) 
+	{
+		int sqr = 1;
+
+		while (true)
+		{
+			if (sqr*sqr==num)                          //break if sqr*sqr i.e 2*2=4 ip is 4 ans will be 2
+			{
+				break;
+			}
+			else if (sqr*sqr<num)                  // to increase the 1 to nth value 
+			{
+				sqr++;
+			}
+			else if (sqr*sqr>num)                   //to stop where square of particular number is greater than entred number
+			{
+				break;
+			}
+		}
+		
+		double crossnum = (sqr*sqr)-num;    //sqr is bigger than num  ex:- 7 hence we need 2*2=4 & 3*3=9 less difference should be used in calculations
+		double lessnum = num-((sqr-1)*(sqr-1));   //1 less number 
+		
+
+		double small = crossnum>lessnum ? lessnum : crossnum;   //finding less
+
+		if (sqr*sqr==num)
+		{
+			return sqr;
+		}
+		else
+		{
+			if (crossnum==small)  
+			{
+				return sqr-(crossnum/(2*sqr));
+			
+			}
+			else 
+			{	
+				sqr--;
+				return sqr+(lessnum/(sqr*2));
+				
+			}
+		}
+
+	}
+
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Number : ");
+		int num = s.nextInt();
+		System.out.println(Sqrt(num));
+	}
+}
