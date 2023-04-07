@@ -16,7 +16,7 @@ class HighestCommonAndCoPrime
 		{
 			if (n1%hcf==0 && n2%hcf==0)
 			{
-				System.out.println(hcf);
+				System.out.println("highest Common Facor is "+hcf);
 				break;
 			}
 			hcf--;
