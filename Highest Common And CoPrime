@@ -1,0 +1,30 @@
+import java.util.Scanner;    //hcf = 
+class HighestCommonAndCoPrime
+{
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner (System.in);
+		System.out.println("Enter Number 1 :");
+		int n1 = s.nextInt();
+
+		System.out.println("Enter Number 1 :");
+		int n2 = s.nextInt();
+		
+		int hcf = n1>n2?n2:n1;
+
+		while (true)
+		{
+			if (n1%hcf==0 && n2%hcf==0)
+			{
+				System.out.println(hcf);
+				break;
+			}
+			hcf--;
+		}
+		if (hcf == 1)
+		{
+				System.out.println("numbers are co-prime");
+		}
+	}
+
+}
